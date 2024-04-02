@@ -21,7 +21,7 @@ interface GruposM {
 }
 
 const estiloNom =
-  "font-size: 24px; background-color: green; font-stlye: strong";
+  "font-size: 24px; background-color: green; font-style: strong";
 
 const grupoA: GruposM = {
   NombreGrupo: "The Beatles",
