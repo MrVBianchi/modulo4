@@ -53,13 +53,13 @@ const grupoE: GruposM = {
   Activo: true,
   GeneroM: "🎸 Rock",
 };
-console.log(grupoA);
-console.log(grupoB);
-console.log(grupoC);
-console.log(grupoD);
-console.log(grupoE);
 console.log("%cThe Beatles", estiloNom);
+console.log(grupoA);
 console.log("%cQueen", estiloNom);
+console.log(grupoB);
 console.log("%cAC DC", estiloNom);
+console.log(grupoC);
 console.log("%cLudwig van Beethoven", estiloNom);
+console.log(grupoD);
 console.log("%cThe Rolling Stones", estiloNom);
+console.log(grupoE);
