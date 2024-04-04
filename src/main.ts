@@ -53,13 +53,23 @@ const grupoE: GruposM = {
   Activo: true,
   GeneroM: "🎸 Rock",
 };
-console.log("%cThe Beatles", estiloNom);
-console.log(grupoA);
-console.log("%cQueen", estiloNom);
-console.log(grupoB);
-console.log("%cAC DC", estiloNom);
-console.log(grupoC);
-console.log("%cLudwig van Beethoven", estiloNom);
-console.log(grupoD);
-console.log("%cThe Rolling Stones", estiloNom);
-console.log(grupoE);
+console.log(`%c${grupoA.NombreGrupo}`, estiloNom);
+console.log(`Año de Fundación: ${grupoA.AñoFundacion}`);
+console.log(`Activo: ${grupoA.Activo}`);
+console.log(`Género Musical: ${grupoA.GeneroM}`);
+console.log(`%c${grupoB.NombreGrupo}`, estiloNom);
+console.log(`Año de Fundación: ${grupoB.AñoFundacion}`);
+console.log(`Activo: ${grupoB.Activo}`);
+console.log(`Género Musical: ${grupoB.GeneroM}`);
+console.log(`%c${grupoC.NombreGrupo}`, estiloNom);
+console.log(`Año de Fundación: ${grupoC.AñoFundacion}`);
+console.log(`Activo: ${grupoC.Activo}`);
+console.log(`Género Musical: ${grupoC.GeneroM}`);
+console.log(`%c${grupoD.NombreGrupo}`, estiloNom);
+console.log(`Año de Fundación: ${grupoD.AñoFundacion}`);
+console.log(`Activo: ${grupoD.Activo}`);
+console.log(`Género Musical: ${grupoD.GeneroM}`);
+console.log(`%c${grupoE.NombreGrupo}`, estiloNom);
+console.log(`Año de Fundación: ${grupoE.AñoFundacion}`);
+console.log(`Activo: ${grupoE.Activo}`);
+console.log(`Género Musical: ${grupoE.GeneroM}`);
