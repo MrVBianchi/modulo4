@@ -1,75 +1,83 @@
-/*
-Nombre del grupo / cantante / compositor (string).
-Año de fundación: cuando se formó el grupo (numero).
-Si está en activo (booleano).
-Género musical (string).
-Cada género queremos tenerlo en una variable.
+/*function areaDelCirculo(radio: number) {
+  return 2 * Math.PI * radio * radio;
+ }
+const area = areaDelCirculo(4);
+console.log(area); 
 
-The Beatles / 1960 / Activo: true / 🎵 Pop Rock
-Queen / 1970 / Activo: false / 🎸 Rock
-AC DC / 1973 / Activo: true / 🤘 Hard Rock
-Ludwig van Beethoven / 1770 / Activo: false / 🎼 Clásica
-The Rolling Stones / 1962 / Activo: true / 🎸 Rock
-Queremos mostrar cada grupo por consola, el nombre del grupo de música queremos ponerlo en negrita, con fuente más grande y color de fondo verde.
+const areaCuadrado = (lado: number) => {
+  return lado * lado;
+}
+const areaC = areaCuadrado(8);
+console.log(areaC);
+
+const estiloTitulo = "color:blue; font-size:18px";
+const alubias = "🫘 alubias";
+const aguacate = "🥑 aguacate";
+const huevo = "🥚 huevo";
+const cebolla = "🧅 cebolla";
+const tomate = "🍅 tomate";
+const lechuga = "🥬 lechuga";
+function pintaReceta(titulo: string, ingredientes: string, preparacion: string) {
+ const estiloTitulo = "color:blue; font-size:18px";
+ // Título ensalada
+ console.log(`%c${titulo}`, estiloTitulo);
+ // Ingredientes
+ console.log(`Ingredientes: ${ingredientes}`);
+ // Preparación
+ console.log(`Preparación: ${preparacion}`);
+}
+pintaReceta(
+ "Ensalada de alubias con aguacate y huevo",
+ `- Ingredientes: ${alubias}, ${aguacate}, ${huevo}, ${cebolla}, ${tomate}, ${lechuga}.`,
+ "Preparación: cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre."
+);
 */
-
-interface GruposM {
-  NombreGrupo: string;
-  AñoFundacion: number;
-  Activo: boolean;
-  GeneroM: string;
+/*
+function sumar() {
+  // Leer los valores de los inputs
+  const sumando1 = (document.getElementById("sumando1") as HTMLInputElement)
+    .value;
+  const sumando2 = (document.getElementById("sumando2") as HTMLInputElement)
+    .value;
+  // Sumar los dos números
+  const resultado = parseInt(sumando1) + parseInt(sumando2);
+  // Mostrar el resultado
+  const resultadoElement = document.getElementById("resultado");
+  if (resultadoElement !== null && resultadoElement !== undefined) {
+    resultadoElement.innerHTML = resultado.toString();
+  }
 }
 
-const estiloNom =
-  "font-size: 24px; background-color: green; font-style: strong";
+const botonsumar = document.getElementById("sumar");
+if (botonsumar !== null && botonsumar !== undefined) {
+  botonsumar.addEventListener("click", sumar);
+}
+*/
+/*
+function cambiarFotoPrincipal(idMiniatura: string): void {
+  const fotoPrincipal = (document.getElementById("foto-principal") as HTMLImageElement);
+  const miniatura = (document.getElementById(idMiniatura) as HTMLImageElement);
+  if (
+    fotoPrincipal !== null &&
+    fotoPrincipal !== undefined &&
+    miniatura !== null &&
+    miniatura !== undefined
+  ) {
+    fotoPrincipal.src = miniatura.src;
+  }
+}
+const miniatura1 = document.getElementById("miniatura1") as HTMLInputElement;
+const miniatura2 = document.getElementById("miniatura2") as HTMLInputElement;
+const miniatura3 = document.getElementById("miniatura3") as HTMLInputElement;
+/*
+ tambien puede hacerse:
+ if (miniatura1 !==null && miniatura1 !==undefined){
+  miniatura1.addEventListener("click", () => cambiarFotoPrincipal("miniatura1"));
+ }
+ */
+/*
+miniatura1.addEventListener("click", () => cambiarFotoPrincipal("miniatura1"));
+miniatura2.addEventListener("click", () => cambiarFotoPrincipal("miniatura2"));
+miniatura3.addEventListener("click", () => cambiarFotoPrincipal("miniatura3"));
+*/
 
-const grupoA: GruposM = {
-  NombreGrupo: "The Beatles",
-  AñoFundacion: 1960,
-  Activo: true,
-  GeneroM: "🎵 Pop Rock",
-};
-const grupoB: GruposM = {
-  NombreGrupo: "Queen",
-  AñoFundacion: 1970,
-  Activo: false,
-  GeneroM: "🎸 Rock",
-};
-const grupoC: GruposM = {
-  NombreGrupo: "AC DC",
-  AñoFundacion: 1973,
-  Activo: true,
-  GeneroM: "🤘 Hard Rock",
-};
-const grupoD: GruposM = {
-  NombreGrupo: "Ludwig van Beethoven",
-  AñoFundacion: 1770,
-  Activo: false,
-  GeneroM: "🎼 Clásica",
-};
-const grupoE: GruposM = {
-  NombreGrupo: "The Rolling Stones",
-  AñoFundacion: 1962,
-  Activo: true,
-  GeneroM: "🎸 Rock",
-};
-console.log(`%c${grupoA.NombreGrupo}`, estiloNom);
-console.log(`Año de Fundación: ${grupoA.AñoFundacion}`);
-console.log(`Activo: ${grupoA.Activo}`);
-console.log(`Género Musical: ${grupoA.GeneroM}`);
-console.log(`%c${grupoB.NombreGrupo}`, estiloNom);
-console.log(`Año de Fundación: ${grupoB.AñoFundacion}`);
-console.log(`Activo: ${grupoB.Activo}`);
-console.log(`Género Musical: ${grupoB.GeneroM}`);
-console.log(`%c${grupoC.NombreGrupo}`, estiloNom);
-console.log(`Año de Fundación: ${grupoC.AñoFundacion}`);
-console.log(`Activo: ${grupoC.Activo}`);
-console.log(`Género Musical: ${grupoC.GeneroM}`);
-console.log(`%c${grupoD.NombreGrupo}`, estiloNom);
-console.log(`Año de Fundación: ${grupoD.AñoFundacion}`);
-console.log(`Activo: ${grupoD.Activo}`);
-console.log(`Género Musical: ${grupoD.GeneroM}`);
-console.log(`%c${grupoE.NombreGrupo}`, estiloNom);
-console.log(`Año de Fundación: ${grupoE.AñoFundacion}`);
-console.log(`Activo: ${grupoE.Activo}`);
-console.log(`Género Musical: ${grupoE.GeneroM}`);
