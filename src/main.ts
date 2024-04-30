@@ -1,83 +1,68 @@
-/*function areaDelCirculo(radio: number) {
-  return 2 * Math.PI * radio * radio;
- }
-const area = areaDelCirculo(4);
-console.log(area); 
+// establezco punto de partida
+let turno = 1;
 
-const areaCuadrado = (lado: number) => {
-  return lado * lado;
-}
-const areaC = areaCuadrado(8);
-console.log(areaC);
-
-const estiloTitulo = "color:blue; font-size:18px";
-const alubias = "🫘 alubias";
-const aguacate = "🥑 aguacate";
-const huevo = "🥚 huevo";
-const cebolla = "🧅 cebolla";
-const tomate = "🍅 tomate";
-const lechuga = "🥬 lechuga";
-function pintaReceta(titulo: string, ingredientes: string, preparacion: string) {
- const estiloTitulo = "color:blue; font-size:18px";
- // Título ensalada
- console.log(`%c${titulo}`, estiloTitulo);
- // Ingredientes
- console.log(`Ingredientes: ${ingredientes}`);
- // Preparación
- console.log(`Preparación: ${preparacion}`);
-}
-pintaReceta(
- "Ensalada de alubias con aguacate y huevo",
- `- Ingredientes: ${alubias}, ${aguacate}, ${huevo}, ${cebolla}, ${tomate}, ${lechuga}.`,
- "Preparación: cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre."
-);
-*/
+// crear funcion que muestre el turno
 /*
-function sumar() {
-  // Leer los valores de los inputs
-  const sumando1 = (document.getElementById("sumando1") as HTMLInputElement)
-    .value;
-  const sumando2 = (document.getElementById("sumando2") as HTMLInputElement)
-    .value;
-  // Sumar los dos números
-  const resultado = parseInt(sumando1) + parseInt(sumando2);
-  // Mostrar el resultado
-  const resultadoElement = document.getElementById("resultado");
-  if (resultadoElement !== null && resultadoElement !== undefined) {
-    resultadoElement.innerHTML = resultado.toString();
+aqui primero llamamos al elemento turno de html
+luego le decimos que si la const displayturno es un htmlElement, entonces represente en ese elemento
+nuestra variable turno
+ésta hay que cambiarla de number a string con ".toString" para que el formato se represente igual
+*/
+const TurnoActual = () => {
+  const displayTurno = document.getElementById("turno");
+  if (displayTurno && displayTurno instanceof HTMLElement) {
+    displayTurno.innerText = turno.toString().padStart(2, "0");
+    // aqui usamos .padStart para usar la funcion de extender la cadena de texto tenga el alcance deseado en longitud
+    // se usa .padStart(longitudCadena, "lo que queremos que rellene la cadena")
   }
 }
 
-const botonsumar = document.getElementById("sumar");
-if (botonsumar !== null && botonsumar !== undefined) {
-  botonsumar.addEventListener("click", sumar);
-}
+// identificar las constantes de los botones
+const anterior = document.getElementById("anterior");
+const siguiente = document.getElementById("siguiente");
+const reset = document.getElementById("reset");
+// añadir clickevent con if
+/* 
+aqui le decimos que; si siguiente existe && siguiente se verifica que es HTMLButtonElement, entonces añadimos
+al evento click, la funcion  botonadelante 
 */
-/*
-function cambiarFotoPrincipal(idMiniatura: string): void {
-  const fotoPrincipal = (document.getElementById("foto-principal") as HTMLImageElement);
-  const miniatura = (document.getElementById(idMiniatura) as HTMLImageElement);
-  if (
-    fotoPrincipal !== null &&
-    fotoPrincipal !== undefined &&
-    miniatura !== null &&
-    miniatura !== undefined
-  ) {
-    fotoPrincipal.src = miniatura.src;
+if (siguiente && siguiente instanceof HTMLButtonElement) {
+  siguiente.addEventListener("click", () => botonAdelante());
+}
+
+if (anterior && anterior instanceof HTMLButtonElement) {
+  anterior.addEventListener("click", () => botonAtras());
+}
+
+if (reset && anterior instanceof HTMLButtonElement) {
+  reset.addEventListener("click", () => botonReset());
+}
+//añadir funcion para boton siguiente
+const botonAdelante = () => {
+  turno++;
+  TurnoActual();
+}
+//añadir funcion para boton atras
+const botonAtras = () => {
+  // que a turno le reste 1
+  turno--;
+  // y que llame a la funcion
+  TurnoActual();
+}
+// funcion para boton reset
+const botonReset = () => {
+  turno = 1;
+  TurnoActual();
+}
+//amos a crear una funcion que mande el contenido del input al numero del turno
+const input = document.getElementById("input");
+const inputButton = document.getElementById("inputButton");
+if (inputButton && inputButton instanceof HTMLButtonElement) {
+  inputButton.addEventListener("click", () => sendTurno());
+}
+const sendTurno = () => {
+  if (input && input instanceof HTMLInputElement) {
+    turno = parseInt(input.value);
+    TurnoActual();
   }
 }
-const miniatura1 = document.getElementById("miniatura1") as HTMLInputElement;
-const miniatura2 = document.getElementById("miniatura2") as HTMLInputElement;
-const miniatura3 = document.getElementById("miniatura3") as HTMLInputElement;
-/*
- tambien puede hacerse:
- if (miniatura1 !==null && miniatura1 !==undefined){
-  miniatura1.addEventListener("click", () => cambiarFotoPrincipal("miniatura1"));
- }
- */
-/*
-miniatura1.addEventListener("click", () => cambiarFotoPrincipal("miniatura1"));
-miniatura2.addEventListener("click", () => cambiarFotoPrincipal("miniatura2"));
-miniatura3.addEventListener("click", () => cambiarFotoPrincipal("miniatura3"));
-*/
-
